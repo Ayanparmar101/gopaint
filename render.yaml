@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: gopaint-server
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: OPENROUTER_API_KEY
+        sync: false
+      - key: OPENROUTER_HTTP_REFERER
+        sync: false
+      - key: OPENROUTER_APP_TITLE
+        value: GoPaint
+      - key: CORS_ORIGIN
+        sync: false
