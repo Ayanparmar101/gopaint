@@ -339,26 +339,6 @@ function App() {
             <h1>Paint, match, and race the room.</h1>
           </div>
         </div>
-
-        <div className="topbar-meta">
-          <span className={`status-chip ${connectionState === 'online' ? 'active' : 'muted'}`}>
-            {connectionState === 'online' ? 'Online' : connectionState === 'connecting' ? 'Connecting' : 'Offline'}
-          </span>
-          {room ? <span className="status-chip subtle">Room {room.code}</span> : null}
-          {session ? <span className="status-chip subtle">Saved: {session.roomCode}</span> : null}
-        </div>
-
-        <div className="topbar-actions" aria-label="Quick actions">
-          <button type="button" className="icon-button" aria-label="Players">
-            <span className="material-symbols-outlined">group</span>
-          </button>
-          <button type="button" className="icon-button hidden-on-mobile" aria-label="Room code">
-            <span className="material-symbols-outlined">qr_code_2</span>
-          </button>
-          <button type="button" className="icon-button" aria-label="Settings">
-            <span className="material-symbols-outlined">settings</span>
-          </button>
-        </div>
       </header>
 
       {notice ? <NoticeBanner notice={notice} onDismiss={() => setNotice(null)} /> : null}
@@ -493,38 +473,6 @@ function LandingPage({
             Resume room
           </button>
           {session ? <p className="muted-copy">Saved session: {session.roomCode}</p> : <p className="muted-copy">No saved room yet.</p>}
-        </div>
-      </section>
-
-      <section className="panel lobby-card">
-        <div className="panel-header">
-          <div>
-            <p className="eyebrow">Friends in Lobby</p>
-            <h2>Waiting for the host</h2>
-          </div>
-          <span className="status-chip subtle">Invite</span>
-        </div>
-
-        <div className="avatar-grid">
-          {['Leo', 'Mia', 'Sam', 'Invite'].map((name, index) => (
-            <div key={name} className="avatar-stack">
-              <div className={`avatar-circle avatar-${index % 4}`}>
-                <span>{name === 'Invite' ? '+' : name.slice(0, 2).toUpperCase()}</span>
-              </div>
-              <span className="avatar-name">{name}</span>
-            </div>
-          ))}
-        </div>
-
-        <div className="lobby-note">
-          <span className="material-symbols-outlined icon-fill">info</span>
-          <p>Waiting for host to start the game. Grab your brushes!</p>
-        </div>
-
-        <div className="session-cta">
-          <button type="button" className="button ghost full-width" onClick={onResumeRoom} disabled={!session}>
-            Jump back in
-          </button>
         </div>
       </section>
     </main>
