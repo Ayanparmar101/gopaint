@@ -278,10 +278,13 @@ input {
 }
 
 .landing-grid {
-  display: grid;
-  grid-template-columns: minmax(320px, 1.2fr) minmax(360px, 0.95fr);
-  gap: 22px;
+  display: flex;
+  justify-content: center;
   align-items: start;
+}
+.join-card {
+  width: 100%;
+  max-width: 600px;
 }
 
 .hero-panel {
@@ -789,7 +792,7 @@ input {
 }
 
 @media (max-width: 1180px) {
-  .landing-grid,
+  
   .room-lobby-grid,
   .play-grid {
     grid-template-columns: 1fr;
@@ -1156,12 +1159,7 @@ body::before {
   width: 100%;
 }
 
-.landing-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
-  gap: 20px;
-  align-items: start;
-}
+/* .landing-grid superseded */
 
 .join-card,
 .lobby-card {
@@ -1767,7 +1765,7 @@ body::before {
 }
 
 @media (max-width: 1180px) {
-  .landing-grid,
+  
   .room-lobby-grid,
   .play-grid {
     grid-template-columns: 1fr;
